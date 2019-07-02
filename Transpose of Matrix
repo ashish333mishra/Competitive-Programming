@@ -1,0 +1,38 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	     try
+	     {
+	 BufferedReader rb=new BufferedReader(new InputStreamReader(System.in));
+	 int t=Integer.parseInt(rb.readLine().trim());
+	 while(t--!=0)
+	 {
+	 int n=Integer.parseInt(rb.readLine().trim());
+	 int a[]=new int[(n*n)+1];
+	 String kq[]=rb.readLine().split(" ");
+	 for(int i=1;i<=n*n;i++)
+	     a[i]=Integer.parseInt(kq[i-1]);
+	 int q=1;
+	 StringBuffer sb=new StringBuffer();
+	 while(q<=n)
+	 {
+	     for(int i=q;i<=n*n;i=i+n)
+	     {
+	         sb.append(a[i]+" ");
+	     }
+	     q++;
+	 }
+	 System.out.println(sb);
+	 sb.setLength(0);
+	 }
+	 
+	 }
+	 catch(Exception e)
+	 {
+	     
+	 }
+}}
