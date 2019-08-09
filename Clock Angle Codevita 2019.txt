@@ -1,0 +1,45 @@
+import java.util.*;
+import java.io.*;
+import java.text.*;
+public class Main{
+public static void main(String args[])
+{
+  Scanner scan=new Scanner(System.in);
+  int hour=scan.nextInt();
+  float kq=hour;
+  double k=scan.nextDouble();
+  double u=kq/360;
+  double y=u*k;
+  int h1=(int)y;
+  double m1=y-h1;
+  m1=m1*60;
+  int m11=(int)m1;
+  if(m11==0 && h1==12)
+  System.out.println("0.00");
+  else
+  {
+  double z=0;
+	         if(m11==60)
+	         z=0;
+	         else
+	         z=m11*1/2;
+	         double kwe=(Math.abs((h1*30)+(z)-(m11*6)));
+	         double ke=360-k-1;
+	         if(ke<kwe)
+	         {
+	          
+	       
+	         System.out.printf("%.2f", ke);
+	             
+	         }
+	         else
+	         {
+	             
+	       
+	         
+	          System.out.printf("%.2f", kwe);
+	         }
+	         
+   }}
+}
+         
