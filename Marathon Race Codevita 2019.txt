@@ -1,0 +1,72 @@
+import java.util.*;
+import java.io.*;
+import java.text.*;
+public class Main{
+public static void main(String args[])
+{
+  Scanner scan=new Scanner(System.in);
+  int racer=scan.nextInt();
+  int t=scan.nextInt();
+  int max[]=new int[(t/2)-1];
+  int win[]=new int[(t/2)-1];
+  //int count[]=new int[racer+1];
+  int k=1;
+  while(racer--!=0)
+  {
+      int sum=0;
+      
+    int q[]=new int[t+1];
+    for(int i=1;i<=t;i++)
+    {
+      q[i]=scan.nextInt();
+    }
+    int y=scan.nextInt();
+    int l=0;
+    for(int i=1;i<=t;i++)
+    {
+      sum=sum+q[i]*y;
+      if(i%2==0 && l<((t/2)-1))
+      {
+          if(max[l]<sum)
+        {
+            max[l]=sum;
+            win[l]=k;
+           
+        }
+        
+        l++;
+    }
+  }
+  k++;
+}
+//Max repeating
+
+Arrays.sort(win);
+int n=win.length;
+        int max1 = 1, result = win[0]; 
+        int cur = 1; 
+        for (int i = 1; i < win.length; i++) 
+        { 
+            if (win[i] == win[i - 1]) 
+                cur++; 
+            else 
+            { 
+                if (cur > max1) 
+                { 
+                    max1 = cur; 
+                    result = win[i - 1]; 
+                } 
+                cur = 1; 
+            } 
+        } 
+        if (cur > max1) 
+        { 
+            max1 = cur; 
+            result = win[n - 1]; 
+        } 
+      
+      System.out.println(result);
+}
+}
+
+         
